@@ -1,12 +1,14 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HabitsContext } from '../Context/HabitsContext';
 import CreateHabit from '../Components/CreateHabit';
+import EditHabit from '../Components/EditHabit';
 
 const Main = () => {
   const navigate = useNavigate();
   const { activeHabitsList, MoveToArchive, deleteHabit } =
     useContext(HabitsContext);
+  const [editHabitState, setEditHabitState] = useState();
 
   const borderColorHandler = (timeOfTheDay) => {
     switch (timeOfTheDay) {
@@ -72,7 +74,15 @@ const Main = () => {
                       <button type='button' className='btn btn-outline-primary'>
                         <i className='bi bi-eye'></i> View Habit
                       </button>
-                      <button type='button' className='btn btn-outline-primary'>
+                      <button
+                        type='button'
+                        className='btn btn-outline-primary'
+                        data-bs-toggle='modal'
+                        data-bs-target='#editModal'
+                        onClick={() => {
+                          setEditHabitState(activeHabit);
+                        }}
+                      >
                         <i className='bi bi-pencil-square'></i> Edit Habit
                       </button>
                       <button
@@ -105,6 +115,7 @@ const Main = () => {
         )}
       </div>
       <CreateHabit></CreateHabit>
+      <EditHabit activeHabit={editHabitState}></EditHabit>
     </>
   );
 };

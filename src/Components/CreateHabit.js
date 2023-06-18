@@ -13,7 +13,6 @@ const CreateHabit = () => {
 
   const onChangeHandler = (id, value) => {
     setAddFormState((prevState) => ({ ...prevState, [id]: value }));
-    console.log(addFormState);
   };
   return (
     <>

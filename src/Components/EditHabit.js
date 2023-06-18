@@ -24,7 +24,7 @@ const EditHabit = ({ activeHabit }) => {
             <div className='modal-content'>
               <div className='modal-header'>
                 <h1 className='modal-title fs-5' id='exampleModalLabel'>
-                  Create New Habit
+                  Edit Habit
                 </h1>
                 <button
                   type='button'
@@ -42,7 +42,7 @@ const EditHabit = ({ activeHabit }) => {
                     type='text'
                     className='form-control'
                     id='name'
-                    defaultValue={activeHabit.name}
+                    value={activeHabit.name}
                     onChange={(event) => {
                       onChangeHandler(event.target.id, event.target.value);
                     }}
@@ -55,7 +55,7 @@ const EditHabit = ({ activeHabit }) => {
                   <select
                     className='form-select'
                     id='repeat'
-                    defaultValue={activeHabit.repeat}
+                    value={activeHabit.repeat}
                     onChange={(event) => {
                       onChangeHandler(event.target.id, event.target.value);
                     }}
@@ -74,7 +74,7 @@ const EditHabit = ({ activeHabit }) => {
                   <select
                     className='form-select'
                     id='goal'
-                    defaultValue={activeHabit.goal}
+                    value={activeHabit.goal}
                     onChange={(event) => {
                       onChangeHandler(event.target.id, event.target.value);
                     }}
@@ -93,7 +93,7 @@ const EditHabit = ({ activeHabit }) => {
                   <select
                     className='form-select'
                     id='timeOfTheDay'
-                    defaultValue={activeHabit.timeOfTheDay}
+                    value={activeHabit.timeOfTheDay}
                     onChange={(event) => {
                       onChangeHandler(event.target.id, event.target.value);
                     }}
@@ -111,7 +111,7 @@ const EditHabit = ({ activeHabit }) => {
                   </label>
                   <input
                     type='date'
-                    defaultValue={activeHabit.startDate}
+                    value={activeHabit.startDate}
                     onChange={(event) => {
                       onChangeHandler(event.target.id, event.target.value);
                     }}

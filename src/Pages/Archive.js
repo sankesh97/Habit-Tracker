@@ -4,7 +4,7 @@ import { HabitsContext } from '../Context/HabitsContext';
 
 const Archive = () => {
   const navigate = useNavigate();
-  const { archiveHabitsList, MoveToArchive } = useContext(HabitsContext);
+  const { archiveHabitsList } = useContext(HabitsContext);
   return (
     <>
       <div className='d-flex justify-content-between'>

@@ -35,7 +35,13 @@ export const HabitsProvider = ({ children }) => {
 
   const EditHabit = (habit) => {
     setActiveHabitsList((prevState) =>
-      prevState.filter((currentHabit) => currentHabit.id !== habit.id)
+      prevState.reduce(
+        (allHabits, currentHabit) =>
+          currentHabit.id === habit.id
+            ? [...allHabits, habit]
+            : [...allHabits, currentHabit],
+        []
+      )
     );
   };
 

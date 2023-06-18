@@ -33,6 +33,12 @@ export const HabitsProvider = ({ children }) => {
     );
   };
 
+  const EditHabit = (habit) => {
+    setActiveHabitsList((prevState) =>
+      prevState.filter((currentHabit) => currentHabit.id !== habit.id)
+    );
+  };
+
   return (
     <HabitsContext.Provider
       value={{
@@ -44,6 +50,7 @@ export const HabitsProvider = ({ children }) => {
         MoveToArchive,
         deleteHabit,
         optionsList,
+        EditHabit,
       }}
     >
       {children}

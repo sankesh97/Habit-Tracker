@@ -5,7 +5,7 @@ export const habits = [
     repeat: 'Daily',
     goal: 'Once',
     timeOfTheDay: 'Morning',
-    startDate: '',
+    startDate: '2023-06-19',
   },
   {
     id: 'd01f2a97-513d-4e20-9d63-cc6e689dd042',
@@ -13,6 +13,6 @@ export const habits = [
     repeat: 'Daily',
     goal: 'Once',
     timeOfTheDay: 'Evening',
-    startDate: '',
+    startDate: '2023-06-19',
   },
 ];

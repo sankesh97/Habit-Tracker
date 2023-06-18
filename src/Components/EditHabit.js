@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { HabitsContext } from '../Context/HabitsContext';
 
 const EditHabit = ({ activeHabit }) => {
-  const { optionsList, createNewHabit } = useContext(HabitsContext);
+  const { optionsList, EditHabit } = useContext(HabitsContext);
   const [addFormState, setAddFormState] = useState(
     activeHabit ? { activeHabit } : ''
   );
@@ -130,7 +130,7 @@ const EditHabit = ({ activeHabit }) => {
                 </button>
                 <button
                   onClick={() => {
-                    createNewHabit(addFormState);
+                    EditHabit(addFormState);
                   }}
                   data-bs-dismiss='modal'
                   type='button'
